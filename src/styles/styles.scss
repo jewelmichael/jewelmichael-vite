@@ -1,0 +1,140 @@
+@use "./base/reset";
+@use "./base/reboot";
+@use "./base/initial";
+
+@use "./utils/misc";
+/* _variables.scss */
+
+:root {
+  @include mixins.generate-colors(vars.$color-primary, "primary");
+  @include mixins.generate-colors(vars.$color-secondary, "secondary");
+  @include mixins.generate-colors(vars.$color-dark, "dark");
+  @include mixins.generate-colors(vars.$color-black, "black");
+  --breakpoint-xs: #{vars.$breakpoint-xs};
+  --breakpoint-sm: #{vars.$breakpoint-sm};
+  --breakpoint-md: #{vars.$breakpoint-md};
+  --breakpoint-lg: #{vars.$breakpoint-lg};
+  --breakpoint-xl: #{vars.$breakpoint-xl};
+}
+
+body,
+.btn {
+  font-family: vars.$secondaryFontFamily;
+  font-size: vars.$font-size-base;
+  line-height: 1.8;
+}
+
+.btn {
+  background-color: #fff;
+  border: 0;
+  border-radius: 100px;
+  padding: vars.$spacer vars.$spacer-m 1.8rem;
+  line-height: 1;
+  font-weight: 500;
+  box-shadow: vars.$btnShadow;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.005);
+  box-shadow: vars.$btnShadowHover;
+}
+.btn + .btn {
+  margin-left: 1.2rem;
+}
+.btn-clear {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.btn-solid {
+  background-color: var(--color-primary-base);
+  color: #fff;
+}
+main > section {
+  padding-left: vars.$spacer;
+  padding-right: vars.$spacer;
+  padding-top: vars.$spacer-xl;
+  padding-bottom: vars.$spacer-xxl;
+}
+section.is-light-colored {
+  background-color: #efefef;
+}
+section.is-primary-colored {
+  background-color: var(--color-primary-lightest);
+}
+.container {
+  width: 100%;
+  max-width: vars.$containerWidth;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-highlight {
+  color: var(--color-primary);
+}
+
+/*cards*/
+.cards {
+  .carditem {
+    user-select: none;
+    padding: vars.$spacer-m;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px -3px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    p {
+      color: var(--color-dark-lighter);
+    }
+    &:hover {
+      box-shadow: 2px 2px 20px -10px rgba(0, 0, 0, 0.2);
+      transform: scale(1.02);
+    }
+  }
+  .card-outline {
+    .carditem {
+      border: 1px solid #000;
+    }
+  }
+  &.card-outline {
+    .carditem {
+      border: 1px solid #dedede;
+    }
+  }
+}
+
+.text-primary {
+  color: var(--color-primary-base);
+}
+.text-secondary {
+  color: var(--color-secondary-base);
+}
+.text-white {
+  color: #fff;
+}
+.textEllipsis {
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  &.small {
+    -webkit-line-clamp: 1;
+  }
+  &.medium {
+    -webkit-line-clamp: 4;
+  }
+  &.large {
+    -webkit-line-clamp: 5;
+  }
+}
+
+.half-width {
+  width: 50%;
+}
+
+.line {
+  height: 2px;
+  background-color: var(--color-dark-xlightest);
+  background-color: #fff;
+}

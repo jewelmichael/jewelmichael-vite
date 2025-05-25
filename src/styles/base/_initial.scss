@@ -1,0 +1,104 @@
+@use "@/styles/base/variables" as vars;
+@use "@/styles/base/mixins" as mixins;
+
+@include mixins.generate-spacer-classes();
+@include mixins.generate-line-height-classes();
+@include mixins.generate-font-weight-classes();
+
+@include mixins.generate-color-classes(vars.$color-primary, "primary");
+@include mixins.generate-color-classes(vars.$color-secondary, "secondary");
+@include mixins.generate-color-classes(vars.$color-dark, "dark");
+@include mixins.generate-color-classes(vars.$color-black, "black");
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: vars.$fontColor;
+}
+a {
+  display: inline-block;
+  position: relative;
+  color: vars.$color-primary;
+  text-decoration: none;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  &:hover {
+    &:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}
+
+hgroup {
+  margin-bottom: vars.$spacer-m;
+}
+.font-base {
+  font-size: vars.$font-size-base;
+}
+.font-display {
+  font-size: 4.8rem;
+}
+.font-h1 {
+  font-size: vars.$font-size-h1;
+}
+.font-h2 {
+  font-size: vars.$font-size-h2;
+}
+.font-h3 {
+  font-size: vars.$font-size-h3;
+}
+.font-h4 {
+  font-size: vars.$font-size-h4;
+}
+.font-h5 {
+  font-size: vars.$font-size-h5;
+}
+.font-h6 {
+  font-size: vars.$font-size-h6;
+}
+
+.fond-bold {
+  font-weight: 600;
+}
+.fond-boldest {
+  font-weight: 900;
+}
+.fond-bolder {
+  font-weight: 700;
+}
+.fond-light {
+  font-weight: 300;
+}
+.fond-thin {
+  font-weight: 100;
+}
+
+.section_intro {
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: vars.$color-primary;
+  margin-bottom: 16px;
+  display: inline-block;
+  &::before {
+    content: "-";
+    margin-right: 6px;
+    line-height: 1;
+  }
+}

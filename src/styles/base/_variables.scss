@@ -1,0 +1,98 @@
+/* Imports
+ ------*/
+@use "@/assets/fonts/FontImport.scss";
+/* Colors
+  ------*/
+$color-primary: #139652;
+$color-secondary: #fe6d73;
+$color-dark: #1b281f;
+$color-black: #000;
+$color-white: #efefef;
+$color-background: #fcfcfc;
+
+/* Spacers
+  ------*/
+$spacer: 2rem;
+$spacer-xxl: $spacer * 6;
+$spacer-xl: $spacer * 4;
+$spacer-l: $spacer * 2.5;
+$spacer-m: $spacer * 1.6;
+$spacer-s: $spacer * 0.5;
+$spacer-xs: $spacer * 0.25;
+$spacer-xxs: $spacer * 0.1;
+
+/* Responsive Screens and Others 
+------*/
+
+/* Component Variables 
+------*/
+$headerHeight: 80px;
+$containerWidth: 1280px;
+
+/* Fonts , Sizes and Styles
+------*/
+$font-size-base: 2.1rem;
+$font-size-h1: 3.6rem;
+$font-size-h2: 3.2rem;
+$font-size-h3: 2.6rem;
+$font-size-h4: 2.2rem;
+$font-size-h5: 1.8rem;
+$font-size-h6: 1.6rem;
+$font-size-display: 4.8rem;
+$primaryFontFamily: "League Spartan", sans-serif;
+$titleFontFamily: "Vollkorn", cursive;
+$secondaryFontFamily: "League Spartan", sans-serif;
+$fontColor: $color-dark;
+
+/* Shadows
+------*/
+$btnShadow:
+  inset 4px 6px 13px 0px rgba(0, 0, 0, 0.05),
+  1px 2px 3px rgba(0, 0, 0, 0.2);
+$btnShadowHover:
+  inset 4px 6px 23px 0px rgba(255, 255, 255, 0.2),
+  1px 7px 4px rgba(0, 0, 0, 0.15),
+  inset 0 0 0 1px rgba(19, 150, 82, 0.125);
+$shadowBase: 1px 2px 3px rgba(0, 0, 0, 0.2);
+
+/* Cards
+------*/
+$cardSpace: 30px;
+$cardBorderRadius: 4px;
+
+// _variables.scss
+
+$variable-sizes: (
+  xs: 4px,
+  s: 8px,
+  base: 12px,
+  m: 16px,
+  l: 24px,
+  xl: 32px,
+  xxl: 40px
+);
+
+$line-heights: (
+  1: 1,
+  1-2: 1.2,
+  1-5: 1.5,
+  2: 2
+);
+
+$font-weights: (
+  thin: 100,
+  extralight: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  block: 900
+);
+
+$breakpoint-xs: 480px; // Extra small devices (mobile phones)
+$breakpoint-sm: 576px; // Small devices (landscape phones)
+$breakpoint-md: 768px; // Medium devices (tablets)
+$breakpoint-lg: 992px; // Large devices (desktops)
+$breakpoint-xl: 1200px; // Extra large devices (large desktops)

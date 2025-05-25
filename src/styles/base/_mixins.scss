@@ -1,0 +1,161 @@
+// Generate classes for text and background
+@use "sass:color";
+@use "@/styles/base/variables" as *;
+
+@mixin generate-color-classes($base-color, $name) {
+  $color-map: (
+    xlightest: color.scale($base-color, $lightness: 80%),
+    lightest: color.scale($base-color, $lightness: 64%),
+    lighter: color.scale($base-color, $lightness: 30%),
+    light: color.scale($base-color, $lightness: 10%),
+    base: $base-color,
+    dark: color.scale($base-color, $lightness: -10%),
+    darker: color.scale($base-color, $lightness: -15%),
+    darkest: color.scale($base-color, $lightness: -20%),
+    xdarkest: color.scale($base-color, $lightness: -10%)
+  );
+
+  @each $key, $color in $color-map {
+    .text-#{$name}-#{$key} {
+      color: $color;
+    }
+
+    .bg-#{$name}-#{$key} {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin generate-colors($base-color, $name) {
+  $color-map: (
+    xlightest: color.scale($base-color, $lightness: 80%),
+    lightest: color.scale($base-color, $lightness: 64%),
+    lighter: color.scale($base-color, $lightness: 30%),
+    light: color.scale($base-color, $lightness: 10%),
+    base: $base-color,
+    dark: color.scale($base-color, $lightness: -10%),
+    darker: color.scale($base-color, $lightness: -15%),
+    darkest: color.scale($base-color, $lightness: -20%),
+    xdarkest: color.scale($base-color, $lightness: -10%)
+  );
+
+  @each $key, $color in $color-map {
+    --color-#{$name}-#{$key}: #{$color}; // Declares CSS variables
+  }
+}
+
+// Mixin to generate spacer classes
+@mixin generate-spacer-classes() {
+  @each $key, $value in $variable-sizes {
+    .m-#{$key} {
+      margin: $value;
+    }
+
+    .mt-#{$key} {
+      margin-top: $value;
+    }
+
+    .mr-#{$key} {
+      margin-right: $value;
+    }
+
+    .mb-#{$key} {
+      margin-bottom: $value;
+    }
+
+    .ml-#{$key} {
+      margin-left: $value;
+    }
+
+    .mx-#{$key} {
+      margin-left: $value;
+      margin-right: $value;
+    }
+
+    .my-#{$key} {
+      margin-top: $value;
+      margin-bottom: $value;
+    }
+
+    .p-#{$key} {
+      padding: $value;
+    }
+
+    .pt-#{$key} {
+      padding-top: $value;
+    }
+
+    .pr-#{$key} {
+      padding-right: $value;
+    }
+
+    .pb-#{$key} {
+      padding-bottom: $value;
+    }
+
+    .gap-column-#{$key} {
+      column-gap: $value;
+    }
+
+    .gap-row-#{$key} {
+      row-gap: $value;
+    }
+
+    .pl-#{$key} {
+      padding-left: $value;
+    }
+
+    .px-#{$key} {
+      padding-left: $value;
+      padding-right: $value;
+    }
+
+    .py-#{$key} {
+      padding-top: $value;
+      padding-bottom: $value;
+    }
+  }
+}
+
+// Mixin for generating line-height classes
+@mixin generate-line-height-classes() {
+  @each $key, $value in $line-heights {
+    .lh-#{$key} {
+      line-height: $value;
+    }
+  }
+}
+
+// Mixin to generate font weight classes
+@mixin generate-font-weight-classes() {
+  @each $key, $value in $font-weights {
+    .fw-#{$key} {
+      font-weight: $value;
+    }
+  }
+}
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+// Mixin for media queries

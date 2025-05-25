@@ -1,0 +1,29 @@
+.Name {
+  text-decoration: none;
+}
+
+.linkItem {
+  text-transform: lowercase;
+  margin: 0 vars.$spacer;
+}
+
+.Wrapper {
+  padding: vars.$spacer-l vars.$spacer-m;
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .Wrapper {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
