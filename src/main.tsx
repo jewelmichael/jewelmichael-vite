@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { ThemeProvider } from '@/components/components/theme/ThemeContext'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './routes'
@@ -9,12 +10,14 @@ const Root = () => {
 
   return (
     <React.StrictMode>
-      <BrowserRouter>
-        <AppRoutes />
-        {startLoader && (
-          <Loader onComplete={() => setStartLoader(false)} />
-        )}
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <AppRoutes />
+          {startLoader && (
+            <Loader onComplete={() => setStartLoader(false)} />
+          )}
+        </BrowserRouter>
+      </ThemeProvider>
     </React.StrictMode>
   )
 }

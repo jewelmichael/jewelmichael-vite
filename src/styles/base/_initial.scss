@@ -5,17 +5,13 @@
 @include mixins.generate-line-height-classes();
 @include mixins.generate-font-weight-classes();
 
-@include mixins.generate-color-classes(vars.$color-primary, "primary");
-@include mixins.generate-color-classes(vars.$color-secondary, "secondary");
-@include mixins.generate-color-classes(vars.$color-dark, "dark");
-@include mixins.generate-color-classes(vars.$color-black, "black");
 
 html {
   font-size: 62.5%;
 }
 
 body {
-  color: vars.$fontColor;
+  color: var(--text);
 }
 a {
   display: inline-block;
