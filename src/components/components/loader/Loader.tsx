@@ -26,7 +26,7 @@ const Loader = ({ onComplete }: { onComplete: () => void }) => {
         <motion.div
           className={styles.loader}
           style={{
-            background: startReveal ? 'transparent' : '#0e1e1c',
+            background: startReveal ? 'transparent' : '#062D1F',
             pointerEvents: 'none', // ensures no blocking
           }}
           initial={{ opacity: 1 }}

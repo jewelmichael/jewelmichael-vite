@@ -16,7 +16,7 @@ body {
 a {
   display: inline-block;
   position: relative;
-  color: vars.$color-primary;
+  color: var(--color-primary);
   text-decoration: none;
 
   &:after {
@@ -89,7 +89,7 @@ hgroup {
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 800;
-  color: vars.$color-primary;
+  color: var(--color-primary);
   margin-bottom: 16px;
   display: inline-block;
   &::before {

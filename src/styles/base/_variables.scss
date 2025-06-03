@@ -3,23 +3,27 @@
 @use "@/assets/fonts/FontImport.scss";
 /* Colors
   ------*/
-$color-primary: #3A7C6F; // #139652;
-$color-secondary: #F9F9F6; //#4B5563;
-$color-accent: #FFB84C;
+$color-primary: var(--color-primary); // #139652;
+$color-primary-light: var(--color-primary-light); // #139652;
+$color-primary-light-bg: var(--color-primary-light-bg); // #139652;
+$color-primary-dark-bg: var(--color-primary-dark-bg); // #139652;
+$color-secondary: var(--color-secondary); //#4B5563;
+$color-secondary-light: var(--color-secondary-light); //#4B5563;
+$color-accent: var(--color-accent);
 
 // Light theme
-$light-bg: #F9F9F6;
-$light-card: #FFFFFF;
-$light-text: #1F1F1F;
-$light-muted: #A6A6A6;
-$light-border: #E5E5E5;
+$light-bg: var(--bg); // #F8F9FA;
+$light-bg-light: var(--bg-light); // #F8F9FA;
+$light-bg-dark: var(--bg-light); // #F8F9FA;
+$light-text: var(--text);
+$light-text-light: var(--text-light);
+$light-card: var(--card); // #FFFFFF;
+$light-card-dark: var(--card-cardk); // #FFFFFF;
+$light-card-shadow: var(--card-shadow); // #FFFFFF;
+$light-muted: var(--muted); // #A6A6A6;
+$light-border: var(--border); // #DADADA;
+$light-highlight-hover: var(--highlight-hover); // #DADADA;
 
-// Dark theme
-$dark-bg: #1B1F1D;
-$dark-card: #262D2A;
-$dark-text: #F0F0F0;
-$dark-muted: #888888;
-$dark-border: #2C2C2C;
 
 /* Spacers
   ------*/
@@ -73,6 +77,7 @@ $cardBorderRadius: 4px;
 // _variables.scss
 
 $variable-sizes: (
+  none: 0,
   xs: 4px,
   s: 8px,
   base: 12px,
