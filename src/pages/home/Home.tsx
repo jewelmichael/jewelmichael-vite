@@ -21,10 +21,10 @@ const Home = () => {
               </p>
               <div className={style.actions}>
                 <button type="button" className="btn btn-solid btn-primary">
-                  Get CV
+                  <span className='letter'>Get CV</span>
                 </button>
                 <button type="button" className="btn btn-clear">
-                  Connect
+                  <span className='letter'>Connect</span>
                 </button>
               </div>
             </div>
