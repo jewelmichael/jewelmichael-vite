@@ -1,5 +1,7 @@
 import React from 'react';
 import style from './About.module.scss'; // Assuming you have a CSS module for styles
+import heroImage from '@/assets/images/photo-01.jpg'
+
 const About = () => {
   return (
     <main>
@@ -19,7 +21,9 @@ const About = () => {
       {/* About Me */}
       <section className='is-light-colored'>
         <div className="container grid">
-          <div className="col2"></div>
+          <div className="col2">
+            <img src={heroImage} alt="" />
+          </div>
           <div className="col2">
             <h2>About Me</h2>
             <p>
