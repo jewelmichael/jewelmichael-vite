@@ -3,100 +3,178 @@
 @use "./base/initial";
 
 @use "./utils/misc";
-/* _variables.scss */
 
 :root {
+  /*! Screen Sizes */
   --breakpoint-xs: #{vars.$breakpoint-xs};
   --breakpoint-sm: #{vars.$breakpoint-sm};
   --breakpoint-md: #{vars.$breakpoint-md};
   --breakpoint-lg: #{vars.$breakpoint-lg};
-  --breakpoint-xl: #{vars.$breakpoint-xl};  
-  
-  --color-primary: #3A7C6F;
-  --color-primary-light: #e7f8f5;
-  --color-secondary: #F9F9F6;
-  --color-secondary-light: #F9F9F6;
-  --color-accent: rgb(255, 184, 76);
-  --bg: #F9F9F6;
-  --bg-light: #ffffff;
-  --bg-dark: hsla(60, 20%, 90%, 1);
-  --text: #1F1F1F;
+  --breakpoint-xl: #{vars.$breakpoint-xl};
+
+  /*! Font */
+  --font-family-primary: #{vars.$primaryFontFamily};
+  --font-family-secondary: #{vars.$secondaryFontFamily};
+
+  /*! Colors – Light Theme */
+  --color-primary: #139652;
+  --color-primary-light: #1FBF73;
+  --color-primary-lighter: #A2EFC8;
+  --color-primary-light-bg: #C6F2DE;
+  --color-primary-dark: #0B3F2B;
+  --color-primary-darker: #052014;
+  --color-primary-dark-bg: #0B3F2B;
+  --color-primary-darkest-bg: #041812;
+
+  --color-secondary: #F2C94C;
+  --color-secondary-light: #FFF4C2;
+  --color-secondary-lighter: #FFF9E4;
+  --color-secondary-dark: #C1A437;
+  --color-secondary-darker: #8F7D27;
+
+  --color-accent: #EB5757;
+  --color-accent-light: #F68C8C;
+  --color-accent-dark: #BB2C2C;
+
+  --bg: #F8F9FA;
+  --bg-light: #FFFFFF;
+  --bg-lighter: #FFFFFF;
+  --bg-dark: #E6EBE9;
+  --bg-darker: #D1D6D4;
+
+  --text: #1E1E1E;
+  --text-muted: #5E5E5E;
+  --text-light: #F5F5F5;
+
   --card: #FFFFFF;
+  --card-light: #F5F7F6;
+  --card-dark: #E6EBE9;
+
+  --card-shadow: rgba(0, 0, 0, 0.08);
   --muted: #A6A6A6;
-  --border: #E5E5E5;
-  --highlight-hover: rgba(0,0,0,0.05)
+  --border: #DADADA;
+  --highlight-hover: rgba(0, 0, 0, 0.05);
+
+  --link: var(--color-primary);
+  --link-hover: var(--color-primary-light);
+
+  --btn-shadow: inset 4px 6px 13px rgba(0, 0, 0, 0.05), 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="dark"] {
-  --color-primary-light: #141716;
-  --color-secondary-light: #262D2A;
-  --bg: #1B1F1D;
-  --bg-light: hsl(150, 20%, 11%);
-  --bg-dark: #0a0c0b;
-  --text: #F0F0F0;
-  --card: #262D2A;
-  --muted: #888888;
-  --border: #2C2C2C;
-  --highlight-hover: rgba(0,0,0,0.1)
+  /*! Colors – Dark Theme */
+  --color-primary: #139652;
+  --color-primary-light: #1FBF73;
+  --color-primary-lighter: #48D9A3;
+  --color-primary-light-bg: #1C4B3A;
+  --color-primary-dark: #0B3F2B;
+  --color-primary-darker: #062D1F;
+  --color-primary-dark-bg: #0A2B21;
+  --color-primary-darkest-bg: #031710;
+
+  --color-secondary: #F2C94C;
+  --color-secondary-light: #FFEA9B;
+  --color-secondary-lighter: #FFF7D6;
+  --color-secondary-dark: #D9B63C;
+  --color-secondary-darker: #9C8628;
+
+  --color-accent: #FF6B6B;
+  --color-accent-light: #FF9999;
+  --color-accent-dark: #B03030;
+
+  --bg: #121212;
+  --bg-light: #1E1E1E;
+  --bg-lighter: #2A2A2A;
+  --bg-dark: #0A0A0A;
+  --bg-darker: #050505;
+
+  --text: #F5F5F5;
+  --text-muted: #B5B5B5;
+  --text-light: #1E1E1E;
+
+  --card: #1E1E1E;
+  --card-light: #2C2C2E;
+  --card-dark: #292929;
+
+  --card-shadow: rgba(0, 0, 0, 0.6);
+  --muted: #7D7D7D;
+  --border: #3A3A3C;
+  --highlight-hover: rgba(255, 255, 255, 0.06);
+
+  --link: var(--color-primary);
+  --link-hover: var(--color-primary-light);
+
+  --btn-shadow: inset 4px 6px 13px rgba(255, 255, 255, 0.06),
+    1px 2px 3px rgba(0, 0, 0, 0.4);
 }
 
-body{
+body {
   background-color: var(--bg);
 }
-body{
-  font-family: vars.$secondaryFontFamily;
+
+body {
+  font-family: var(--font-family-primary);
   font-size: vars.$font-size-base;
   line-height: 1.8;
   color: var(--text);
 }
 
 .btn {
-  background-color: #fff;
+  background-color: var(--bg-light);
+  color: var(--text);
   border: 0;
   border-radius: 100px;
   padding: vars.$spacer vars.$spacer-m 1.8rem;
   line-height: 1;
   font-weight: 500;
-  box-shadow: vars.$btnShadow;
+  box-shadow: var(--btn-shadow);
   transition:
     box-shadow 0.3s ease,
     transform 0.3s ease;
 }
+
 .btn:hover {
   transform: scale(1.005);
   box-shadow: vars.$btnShadowHover;
 }
-.btn + .btn {
+
+.btn+.btn {
   margin-left: 1.2rem;
 }
+
 .btn-clear {
   background-color: transparent;
   border-color: transparent;
 }
 
 .btn-solid {
-  background-color: var(--color-primary-base);
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--text-light);
 }
-main > section {
+
+main>section {
   padding-left: vars.$spacer;
   padding-right: vars.$spacer;
   padding-top: vars.$spacer-xl;
   padding-bottom: vars.$spacer-xxl;
   background-color: var(--bg-light);
 }
+
 section.is-light-colored {
   background-color: var(--bg);
 }
+
 section.is-primary-colored {
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light-bg);
 }
+
 .container {
   width: 100%;
   max-width: vars.$containerWidth;
   margin-left: auto;
   margin-right: auto;
 }
+
 .text-highlight {
   color: var(--color-primary);
 }
@@ -108,24 +186,28 @@ section.is-primary-colored {
     padding: vars.$spacer-m;
     background-color: var(--card);
     border-radius: 4px;
-    box-shadow: 3px 3px 5px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 5px -3px var(--card-shadow);
     transition: 0.3s ease;
+
     p {
-      color: var(--color-dark-lighter);
+      color: var(--color-dark);
     }
+
     &:hover {
       box-shadow: 2px 2px 20px -10px rgba(0, 0, 0, 0.2);
       transform: scale(1.02);
     }
   }
+
   .card-outline {
     .carditem {
-      border: 1px solid #000;
+      border: 1px solid var(--border);
     }
   }
+
   &.card-outline {
     .carditem {
-      border: 1px solid #dedede;
+      border: 1px solid var(--border);
     }
   }
 }
@@ -133,24 +215,30 @@ section.is-primary-colored {
 .text-primary {
   color: var(--color-primary-base);
 }
+
 .text-secondary {
   color: var(--color-secondary-base);
 }
+
 .text-white {
   color: var(--color-white);
 }
+
 .textEllipsis {
   display: -webkit-box;
   max-width: 100%;
   -webkit-box-orient: vertical;
   overflow: hidden;
   -webkit-line-clamp: 3;
+
   &.small {
     -webkit-line-clamp: 1;
   }
+
   &.medium {
     -webkit-line-clamp: 4;
   }
+
   &.large {
     -webkit-line-clamp: 5;
   }
@@ -163,5 +251,5 @@ section.is-primary-colored {
 .line {
   height: 2px;
   background-color: var(--color-dark-xlightest);
-  background-color: #fff;
+  background-color: var(--bg-light);
 }

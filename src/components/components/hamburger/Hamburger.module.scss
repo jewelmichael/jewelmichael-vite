@@ -1,0 +1,33 @@
+.wrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border-color: transparent;
+}
+
+.bar {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text);
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.bar1 {
+  top: 0;
+}
+
+.bar2 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bar3 {
+  bottom: 0;
+}

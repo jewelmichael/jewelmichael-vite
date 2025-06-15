@@ -12,7 +12,7 @@
   bottom: 0;
   left: 50%;
   width: 2px;
-  background-color: #19312f;
+  background-color: var(--color-primary-dark-bg);
   transform-origin: top;
 }
 
@@ -38,7 +38,7 @@
 
 .segment {
   flex: 1;
-  background: #0e1e1c;
+  background: var(--color-primary-dark-bg);
   background-size: 200% 100%;
   animation: shimmer 5s infinite linear;
 }
@@ -48,7 +48,7 @@
 .waveLeft, .waveRight {
   width: 40px;
   height: 100%;
-  background: #139652;
+  background: var(--color-primary);
   mask-image: url('data:image/svg+xml;utf8,<svg width="40" height="100%" viewBox="0 0 40 100" xmlns="http://www.w3.org/2000/svg"><path d="M40,0 C10,50 10,50 40,100 Z" fill="black"/></svg>');
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg width="40" height="100%" viewBox="0 0 40 100" xmlns="http://www.w3.org/2000/svg"><path d="M40,0 C10,50 10,50 40,100 Z" fill="black"/></svg>');
   mask-repeat: no-repeat;
