@@ -55,16 +55,14 @@ $font-size-h5: 1.8rem;
 $font-size-h6: 1.6rem;
 $font-size-display: 4.8rem;
 $primaryFontFamily: "League Spartan", sans-serif;
-$titleFontFamily: "Vollkorn", cursive;
-$secondaryFontFamily: "League Spartan", sans-serif;
+$titleFontFamily: "Vollkorn", serif;
+$secondaryFontFamily: "Vollkorn", serif;
 
 /* Shadows
 ------*/
-$btnShadow:
-  inset 4px 6px 13px 0px rgba(0, 0, 0, 0.05),
+$btnShadow: inset 4px 6px 13px 0px rgba(0, 0, 0, 0.05),
   1px 2px 3px rgba(0, 0, 0, 0.2);
-$btnShadowHover:
-  inset 4px 6px 23px 0px rgba(255, 255, 255, 0.2),
+$btnShadowHover: inset 4px 6px 23px 0px rgba(255, 255, 255, 0.2),
   1px 7px 4px rgba(0, 0, 0, 0.15),
   inset 0 0 0 1px rgba(19, 150, 82, 0.125);
 $shadowBase: 1px 2px 3px rgba(0, 0, 0, 0.2);
