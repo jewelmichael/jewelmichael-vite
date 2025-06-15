@@ -117,8 +117,8 @@ const Header = ({ logo, navLinks }: HeaderProps) => {
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.path}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 + i * 0.1 }}
                 >
                   <Link
@@ -137,7 +137,7 @@ const Header = ({ logo, navLinks }: HeaderProps) => {
                 onClick={toggleTheme}
                 className={styles.mobileThemeToggle}
               >
-                {theme === 'light' ? <Sun size={22} /> : <Moon size={22} />}
+                {theme === 'light' ? <Sun size={40} /> : <Moon size={40} />}
               </motion.div>
             </nav>
           </motion.div>
