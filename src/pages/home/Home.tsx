@@ -1,5 +1,5 @@
 import style from './Home.module.scss'
-import heroImage from '@/assets/images/photo-01.jpg'
+// import heroImage from '@/assets/images/vector-photo.PNG'
 
 const Home = () => {
   const experienceCount = Math.floor(
@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <main>
       {/* Hero Section */}
-      <section className={`is-light-colored ${style.withPhoto}`}>
+      <section className={`is-light-colored ${style.withVectorPhoto}`}>
         <div className={style.MainJumbotron}>
           <div className={style.flex1}>
             <div className={style.content}>
@@ -28,9 +28,6 @@ const Home = () => {
                 </button>
               </div>
             </div>
-          </div>
-          <div className={`${style.flex1} ${style.right}`}>
-            <img src={heroImage} alt="Preview of Jewel Michael" />
           </div>
         </div>
       </section>
