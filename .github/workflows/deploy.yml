@@ -3,7 +3,11 @@ name: 🚀 Deploy to Namecheap via FTP
 on:
   push:
     branches:
+<<<<<<< HEAD
       - main
+=======
+      - master
+>>>>>>> e6327faef9c04b529329bc220c0348889753dcd0
 
 jobs:
   deploy:
