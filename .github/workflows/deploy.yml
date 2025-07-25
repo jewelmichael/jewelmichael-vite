@@ -3,7 +3,7 @@ name: 🚀 Deploy to Namecheap via FTP
 on:
   push:
     branches:
-      - main  # Change this if your branch is named 'master'
+      - main
 
 jobs:
   deploy:
@@ -11,28 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout source code
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Setup Node.js
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      # Step 3: Install and build the app
       - name: Install dependencies and build
         run: |
-          npm ci
+          npm install
           npm run build
 
-      # Optional Debug: List dist contents to verify build
-      - name: Debug: List dist/ contents
-        run: ls -la dist
-
-      # Step 4: Deploy via FTP to Namecheap
-      - name: Deploy to FTP
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
