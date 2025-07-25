@@ -8,31 +8,27 @@ on:
 
 jobs:
   deploy:
-    name: Upload build to Namecheap Hosting
+    name: Upload build to dev.jewelmichael.com root
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout source code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Setup Node.js
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      # Step 3: Install dependencies and build
-      - name: Install and build project
+      - name: Install dependencies and build
         run: |
           npm ci
           npm run build
 
-      # Step 4: Debug - list dist folder contents
       - name: Debug: List contents of dist/
-        run: ls -la dist
+        run: |
+          ls -la dist
 
-      # Step 5: Deploy via FTP
       - name: Deploy to Namecheap FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
