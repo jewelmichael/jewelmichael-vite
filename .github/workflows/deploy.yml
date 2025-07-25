@@ -8,11 +8,11 @@ on:
 
 jobs:
   deploy:
-    name: Upload build to dev.jewelmichael.com root
+    name: Upload build to Namecheap Hosting
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup Node
@@ -22,14 +22,10 @@ jobs:
 
       - name: Install dependencies and build
         run: |
-          npm ci
+          npm install
           npm run build
 
-      - name: Debug: List contents of dist/
-        run: |
-          ls -la dist
-
-      - name: Deploy to Namecheap FTP
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
