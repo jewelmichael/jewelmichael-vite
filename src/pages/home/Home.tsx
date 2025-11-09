@@ -15,12 +15,12 @@ const Home = () => {
         <div className={style.MainJumbotron}>
           <div className={style.flex1}>
             <div className={style.content}>
-              <Reveal>
+              <Reveal delay={0.6}>
                 <h1>
                   Hi, I'm <span>Jewel</span>
                 </h1>
               </Reveal>
-              <Reveal delay={0.2}>
+              <Reveal delay={0.8}>
                 <p className="mb-l">
                   Experience Designer based in Kochi, Kerala. Design IT since 2016.
                 </p>

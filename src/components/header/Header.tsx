@@ -5,6 +5,7 @@ import { useTheme } from '@/components/theme/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
 import Hamburger from '@/components/hamburger/Hamburger';
+import Reveal from '../Reveal';
 
 type NavLink = {
   label: string;
@@ -54,18 +55,22 @@ const Header = ({ logo, navLinks }: HeaderProps) => {
   return (
     <>
       <header className={styles.Wrapper}>
-        <Link to="/" className={styles.logo}>{logo}</Link>
+        <Reveal>
+          <Link to="/" className={styles.logo}>{logo}</Link>
+        </Reveal>
 
         {/* Desktop nav */}
         <nav className={`${styles.nav} ${styles.desktopOnly}`}>
-          {navLinks.map(link => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`${styles.linkItem} ${location.pathname === link.path ? styles.active : ''}`}
-            >
-              {link.label}
-            </Link>
+          {navLinks.map((link, idx) => (
+            <Reveal delay={0.1 * idx}>
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`${styles.linkItem} ${location.pathname === link.path ? styles.active : ''}`}
+              >
+                {link.label}
+              </Link>
+            </Reveal>
           ))}
           <span onClick={toggleTheme}>
             <AnimatePresence mode="wait">
