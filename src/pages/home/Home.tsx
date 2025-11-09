@@ -44,7 +44,7 @@ const Home = () => {
           <div className="container">
             <article className={style.about}>
               <div className={style.left}>
-                <Reveal>
+                <Reveal delay={0.8}>
                   <hgroup>
                     <span className="section_intro">Nice to meet you here!</span>
                     <div className={style.profile_basic}>
@@ -56,7 +56,7 @@ const Home = () => {
                 </Reveal>
               </div>
               <div className={style.right}>
-                <Reveal delay={0.2}>
+                <Reveal delay={0.8}>
                   <p>
                     Hello there! My name is{' '}
                     <span className="text-highlight">Jewel Michael</span>. I am a web designer & developer, and I'm very passionate and dedicated to my work.
@@ -66,11 +66,11 @@ const Home = () => {
                   </p>
                 </Reveal>
                 <div className={style.profile_highlights}>
-                  <Reveal delay={0.4} className={style.profile_highlight}>
+                  <Reveal className={style.profile_highlight}>
                     <span className={style.profile_highlight_title}>Email</span>
                     <p>jeweltmichael@gmail.com</p>
                   </Reveal>
-                  <Reveal delay={0.6} className={style.profile_highlight}>
+                  <Reveal delay={0.2} className={style.profile_highlight}>
                     <span className={style.profile_highlight_title}>Phone</span>
                     <p>+91 9037 3637 92</p>
                   </Reveal>
@@ -89,7 +89,7 @@ const Home = () => {
                 title: 'happy clients',
                 value: '30+',
               }].map((item, idx) => (
-                <Reveal delay={(0.2 * idx) + 0.6} className={style.highlight_item} key={idx}>
+                <Reveal delay={(0.2 * idx) - 0.2 } className={style.highlight_item} key={idx}>
                   <span className="font-display font-bold">{item.value}</span>
                   <h3>{item.title}</h3>
                 </Reveal>

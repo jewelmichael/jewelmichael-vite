@@ -5,6 +5,7 @@ import Home from '@/pages/home/Home'
 import About from '@/pages/about/About'
 import Works from '@/pages/works/Works'
 import Contact from '@/pages/contact/Contact'
+import { RevealTimelineProvider } from '@/components/reveal/RevealTimeline'
 
 const AnimatedRoutes = () => {
   const location = useLocation()
@@ -19,7 +20,9 @@ const AnimatedRoutes = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <App />
+            <RevealTimelineProvider>
+              <App />
+            </RevealTimelineProvider>
           </motion.div>
         }>
           <Route index element={<Home />} />

@@ -55,14 +55,14 @@ const Header = ({ logo, navLinks }: HeaderProps) => {
   return (
     <>
       <header className={styles.Wrapper}>
-        <Reveal>
+        <Reveal delay={0.3}>
           <Link to="/" className={styles.logo}>{logo}</Link>
         </Reveal>
 
         {/* Desktop nav */}
         <nav className={`${styles.nav} ${styles.desktopOnly}`}>
           {navLinks.map((link, idx) => (
-            <Reveal delay={0.1 * idx}>
+            <Reveal delay={(0.2 * idx) + 0.4}>
               <Link
                 key={link.path}
                 to={link.path}
