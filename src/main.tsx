@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { ThemeProvider } from '@/components/components/theme/ThemeContext'
+import { ThemeProvider } from '@/components/theme/ThemeContext'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './routes'
-import Loader from '@/components/components/loader/Loader'
+import Loader from '@/components/loader/Loader'
 
 const Root = () => {
   const [startLoader, setStartLoader] = useState(true)
