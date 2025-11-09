@@ -47,25 +47,6 @@
   }
 }
 
-.withPhoto {
-  padding-top: 11rem;
-  padding-bottom: 6rem;
-
-  @include mixins.breakpoint(md) {
-    padding-top: 8rem;
-    padding-bottom: 12rem;
-    background-image: url("../../Assets/Images/photo-01.JPG");
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  @include mixins.breakpoint(lg) {
-    background-image: url("../../Assets/Images/photo-01.JPG");
-    background-size: cover;
-    background-position: right center;
-    background-repeat: no-repeat;
-  }
-}
 
 .withVectorPhoto {
   padding-top: 11rem;
@@ -84,7 +65,7 @@
   }
 
   @include mixins.breakpoint(md) {
-    background-image: url("../../Assets/Images/vector-photo.PNG");
+    background-image: url("./vector-photo.PNG");
     background-size: 530px;
     background-position: right bottom;
     background-repeat: no-repeat;
