@@ -27,7 +27,7 @@ export default function Reveal({
 }: RevealProps) {
   return (
     <motion.div
-      className={className}
+      className={className} //{`display-content${className === undefined ? '' : ` ${className}`}`}
       // ensure fade is applied
       initial="hidden"
       whileInView="visible"

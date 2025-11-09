@@ -13,6 +13,7 @@ html {
 body {
   color: var(--text);
 }
+
 a {
   display: inline-block;
   position: relative;
@@ -43,27 +44,35 @@ a {
 hgroup {
   margin-bottom: vars.$spacer-m;
 }
+
 .font-base {
   font-size: vars.$font-size-base;
 }
+
 .font-display {
   font-size: 4.8rem;
 }
+
 .font-h1 {
   font-size: vars.$font-size-h1;
 }
+
 .font-h2 {
   font-size: vars.$font-size-h2;
 }
+
 .font-h3 {
   font-size: vars.$font-size-h3;
 }
+
 .font-h4 {
   font-size: vars.$font-size-h4;
 }
+
 .font-h5 {
   font-size: vars.$font-size-h5;
 }
+
 .font-h6 {
   font-size: vars.$font-size-h6;
 }
@@ -71,22 +80,27 @@ hgroup {
 .fond-bold {
   font-weight: 600;
 }
+
 .fond-boldest {
   font-weight: 900;
 }
+
 .fond-bolder {
   font-weight: 700;
 }
+
 .fond-light {
   font-weight: 300;
 }
+
 .fond-thin {
   font-weight: 100;
 }
 
-.display-inline-block{
+.display-inline-block {
   display: inline-block;
 }
+
 /*
 * Flex box
 */
@@ -98,9 +112,11 @@ hgroup {
 .display-inline-flex {
   display: inline-flex;
 }
+
 .align-items-stretch {
   align-items: stretch;
 }
+
 .align-items-center {
   align-items: center;
 }
@@ -156,21 +172,31 @@ hgroup {
 .justify-content-start {
   justify-content: flex-start;
 }
+
 .justify-content-end {
   justify-content: flex-end;
 }
+
 .justify-content-between {
   justify-content: space-between;
 }
+
 .flex0 {
   flex: 0 0 auto;
 }
+
 .flex1 {
   flex: 1 0 auto;
 }
+
 .flex2 {
   flex: 2 0 auto;
 }
+
 .flex3 {
   flex: 3 0 auto;
+}
+
+.display-content {
+  display: contents;
 }

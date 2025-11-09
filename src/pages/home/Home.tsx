@@ -66,18 +66,14 @@ const Home = () => {
                   </p>
                 </Reveal>
                 <div className={style.profile_highlights}>
-                  <div className={style.profile_highlight}>
-                    <Reveal delay={0.4}>
-                      <span className={style.profile_highlight_title}>Email</span>
-                      <p>jeweltmichael@gmail.com</p>
-                    </Reveal>
-                  </div>
-                  <div className={style.profile_highlight}>
-                    <Reveal delay={0.6}>
-                      <span className={style.profile_highlight_title}>Phone</span>
-                      <p>+91 9037 3637 92</p>
-                    </Reveal>
-                  </div>
+                  <Reveal delay={0.4} className={style.profile_highlight}>
+                    <span className={style.profile_highlight_title}>Email</span>
+                    <p>jeweltmichael@gmail.com</p>
+                  </Reveal>
+                  <Reveal delay={0.6} className={style.profile_highlight}>
+                    <span className={style.profile_highlight_title}>Phone</span>
+                    <p>+91 9037 3637 92</p>
+                  </Reveal>
                 </div>
               </div>
             </article>
@@ -93,12 +89,10 @@ const Home = () => {
                 title: 'happy clients',
                 value: '30+',
               }].map((item, idx) => (
-                <div className={style.highlight_item} key={idx}>
-                  <Reveal delay={0.2 * idx}>
-                    <span className="font-display font-bold">{item.value}</span>
-                    <h3>{item.title}</h3>
-                  </Reveal>
-                </div>
+                <Reveal delay={(0.2 * idx) + 0.6} className={style.highlight_item} key={idx}>
+                  <span className="font-display font-bold">{item.value}</span>
+                  <h3>{item.title}</h3>
+                </Reveal>
               ))}
             </article>
           </div>
@@ -109,12 +103,12 @@ const Home = () => {
       <section id="experience" className={`is-primary-colored ${style.experience}`}>
         <MountOnView>
           <div className="container">
-            <hgroup>
-              <Reveal>
+            <Reveal>
+              <hgroup>
                 <div className="section_intro">EXPERIENCE</div>
                 <h2>Everything about me!</h2>
-              </Reveal>
-            </hgroup>
+              </hgroup>
+            </Reveal>
             <div className={`flexCards cards column2 ${style.cards}`}>
               {[
                 { role: 'Analyst', company: 'Factweavers', years: '2021 - present' },
@@ -122,18 +116,16 @@ const Home = () => {
                 { role: 'UI Developer', company: '2Hatslogic', years: '2018 - 2019' },
                 { role: 'UI Developer', company: 'Veristics', years: '2016 - 2018' },
               ].map((job, idx) => (
-                <div className="flexItem" key={idx}>
+                <Reveal className="flexItem" key={idx} delay={0.2 * idx}>
                   <div className={`carditem ${style.carditem}`}>
-                    <Reveal delay={0.2 * idx}>
-                      <header className="display-flex justify-content-between mb-s lh-1">
-                        <div className="subtitle flex0">{job.role}</div>
-                        <div className="subtitle text-secondary">{job.years}</div>
-                      </header>
-                      <h3 className="text-primary">{job.company}</h3>
-                      <p>Website development is the process of building, programming, coding and maintaining websites and web applications.</p>
-                    </Reveal>
+                    <header className="display-flex justify-content-between mb-s lh-1">
+                      <div className="subtitle flex0">{job.role}</div>
+                      <div className="subtitle text-secondary">{job.years}</div>
+                    </header>
+                    <h3 className="text-primary">{job.company}</h3>
+                    <p>Website development is the process of building, programming, coding and maintaining websites and web applications.</p>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -145,28 +137,26 @@ const Home = () => {
         <MountOnView>
 
           <div className="container">
-            <hgroup>
-              <Reveal>
+            <Reveal>
+              <hgroup>
                 <div className="section_intro">services</div>
                 <h2>My Services</h2>
-              </Reveal>
-            </hgroup>
+              </hgroup>
+            </Reveal>
             <div className="flexCards cards card-outline column3 noShrink">
               {[1, 2, 3, 4, 5].map((n) => (
-                <div className="flexItem" key={n}>
+                <Reveal delay={0.2 * n} className="flexItem" key={n}>
                   <div className="carditem">
-                    <Reveal delay={0.2 * n}>
-                      <header>
-                        <div className="lh-1 mb-s text-black-lightest">{`0${n}`}</div>
-                        <div className="fw-semibold mb-base">Web Design</div>
-                      </header>
-                      <p className="textEllipsis my-base">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, autem necessitatibus asperiores exercitationem odit...
-                      </p>
-                      <a href="/">read more</a>
-                    </Reveal>
+                    <header>
+                      <div className="lh-1 mb-s text-black-lightest">{`0${n}`}</div>
+                      <div className="fw-semibold mb-base">Web Design</div>
+                    </header>
+                    <p className="textEllipsis my-base">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, autem necessitatibus asperiores exercitationem odit...
+                    </p>
+                    <a href="/">read more</a>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
