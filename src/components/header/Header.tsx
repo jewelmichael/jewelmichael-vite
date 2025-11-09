@@ -1,10 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useRef, useEffect, useState } from 'react';
 import styles from './Header.module.scss';
-import { useTheme } from '@/components/components/theme/ThemeContext';
+import { useTheme } from '@/components/theme/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
-import Hamburger from '@/components/components/hamburger/Hamburger';
+import Hamburger from '@/components/hamburger/Hamburger';
 
 type NavLink = {
   label: string;
