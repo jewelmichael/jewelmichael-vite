@@ -4,7 +4,7 @@ import styles from './Loader.module.scss'
 
 const Loader = ({ onComplete }: { onComplete: () => void }) => {
   const [startReveal, setStartReveal] = useState(false)
-  const [done, setDone] = useState(false)
+  const [done, setDone] = useState(true)
 
   useEffect(() => {
     const startCurtain = setTimeout(() => setStartReveal(true), 1400) // match line animation
