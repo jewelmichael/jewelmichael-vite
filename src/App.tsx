@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import Header from '@/components/layouts/header/Header'
-import Footer from '@/components/layouts/footer/Footer'
+import Header from '@/components/header/Header'
+import Footer from '@/components/footer/Footer'
 import '@/styles/styles.scss'
 
 const App = () => {
