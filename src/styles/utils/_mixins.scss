@@ -1,6 +1,11 @@
+/*** _mixins.scss 
+  Purpose: Reusable code blocks that take parameters. 
+  Why: Reduces repetition of common patterns (e.g., media queries, shadows, gradients).
+**********************************/
+
 // Generate classes for text and background
 @use "sass:color";
-@use "@/styles/base/variables" as *;
+@use "@/styles/utils/variables" as *;
 
 @mixin generate-color-classes($base-color, $name) {
   $color-map: (
@@ -15,15 +20,15 @@
     xdarkest: color.scale($base-color, $lightness: -10%)
   );
 
-  @each $key, $color in $color-map {
-    .text-#{$name}-#{$key} {
-      color: $color;
-    }
-
-    .bg-#{$name}-#{$key} {
-      background-color: $color;
-    }
+@each $key, $color in $color-map {
+  .text-#{$name}-#{$key} {
+    color: $color;
   }
+
+  .bg-#{$name}-#{$key} {
+    background-color: $color;
+  }
+}
 }
 
 @mixin generate-colors($base-color, $name) {
@@ -39,9 +44,9 @@
     xdarkest: color.scale($base-color, $lightness: -10%)
   );
 
-  @each $key, $color in $color-map {
-    --color-#{$name}-#{$key}: #{$color}; // Declares CSS variables
-  }
+@each $key, $color in $color-map {
+  --color-#{$name}-#{$key}: #{$color}; // Declares CSS variables
+}
 }
 
 // Mixin to generate spacer classes
@@ -136,26 +141,35 @@
 }
 
 @mixin breakpoint($breakpoint) {
-  @if $breakpoint == xs {
+  @if $breakpoint ==xs {
     @media (min-width: $breakpoint-xs) {
       @content;
     }
-  } @else if $breakpoint == sm {
+  }
+
+  @else if $breakpoint ==sm {
     @media (min-width: $breakpoint-sm) {
       @content;
     }
-  } @else if $breakpoint == md {
+  }
+
+  @else if $breakpoint ==md {
     @media (min-width: $breakpoint-md) {
       @content;
     }
-  } @else if $breakpoint == lg {
+  }
+
+  @else if $breakpoint ==lg {
     @media (min-width: $breakpoint-lg) {
       @content;
     }
-  } @else if $breakpoint == xl {
+  }
+
+  @else if $breakpoint ==xl {
     @media (min-width: $breakpoint-xl) {
       @content;
     }
   }
 }
+
 // Mixin for media queries

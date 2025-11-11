@@ -1,16 +1,24 @@
-@use "@/styles/base/variables" as vars;
-@use "@/styles/base/mixins" as mixins;
+/*** _base.scss 
+  Purpose: Define base-level styles for elements (body, headings, links, paragraphs). 
+  Why: Gives typography, colors, and global visual rules.
+**********************************/
+
+@use "@/styles/utils/variables" as vars;
+@use "@/styles/utils/mixins" as mixins;
 
 @include mixins.generate-spacer-classes();
 @include mixins.generate-line-height-classes();
 @include mixins.generate-font-weight-classes();
-
 
 html {
   font-size: 62.5%;
 }
 
 body {
+  background-color: var(--bg);
+  font-family: var(--font-family-primary);
+  font-size: vars.$font-size-base;
+  line-height: 1.8;
   color: var(--text);
 }
 
@@ -44,6 +52,23 @@ a {
 hgroup {
   margin-bottom: vars.$spacer-m;
 }
+
+main>section {
+  padding-left: vars.$spacer;
+  padding-right: vars.$spacer;
+  padding-top: vars.$spacer-xl;
+  padding-bottom: vars.$spacer-xxl;
+  background-color: var(--bg-light);
+}
+
+section.is-light-colored {
+  background-color: var(--bg);
+}
+
+section.is-primary-colored {
+  background-color: var(--color-primary-light-bg);
+}
+
 
 .font-base {
   font-size: vars.$font-size-base;
@@ -199,4 +224,70 @@ hgroup {
 
 .display-content {
   display: contents;
+}
+
+.flexCards {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  margin: calc(-1 * vars.$cardSpace / 2);
+  flex-direction: column;
+
+  .flexItem {
+    flex: 1;
+    margin: calc(vars.$cardSpace / 2);
+  }
+
+  &.noShrink {
+    .flexItem {
+      flex: 0 0 auto;
+    }
+  }
+
+  &.column2 {
+    .flexItem {
+      flex-basis: 100%;
+
+      @include mixins.breakpoint(md) {
+        flex-basis: calc((100% / 2) - vars.$cardSpace);
+      }
+    }
+  }
+
+  &.column3 {
+    .flexItem {
+      flex-basis: 100%;
+
+      @include mixins.breakpoint(md) {
+        flex-basis: calc((100% / 2) - vars.$cardSpace);
+      }
+
+      @include mixins.breakpoint(lg) {
+        flex-basis: calc((100% / 3) - vars.$cardSpace);
+      }
+    }
+  }
+
+  &.column4 {
+    .flexItem {
+      flex-basis: 100%;
+
+      @include mixins.breakpoint(md) {
+        flex-basis: calc((100% / 2) - vars.$cardSpace);
+      }
+
+      @include mixins.breakpoint(lg) {
+        flex-basis: calc((100% / 3) - vars.$cardSpace);
+      }
+
+      @include mixins.breakpoint(xl) {
+        flex-basis: calc((100% / 4) - vars.$cardSpace);
+      }
+    }
+  }
+
+  @include mixins.breakpoint(md) {
+    flex-direction: row;
+  }
 }

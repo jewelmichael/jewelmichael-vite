@@ -22,8 +22,8 @@ export default defineConfig({
       scss: {
         // Optional: make variables and mixins globally available
         additionalData: `
-          @use "@/styles/base/variables" as vars;
-          @use "@/styles/base/mixins" as mixins;
+          @use "@/styles/utils/variables" as vars;
+          @use "@/styles/utils/mixins" as mixins;
         `,
       },
     },

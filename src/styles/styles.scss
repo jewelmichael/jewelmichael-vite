@@ -1,8 +1,9 @@
-@use "./base/reset";
-@use "./base/reboot";
-@use "./base/initial";
-
-@use "./utils/misc";
+/*** styles.scss 
+  Purpose: The entry point that imports everything in the right order.
+**********************************/
+@use "./utils/reset";
+@use "./utils/base";
+@use "./utils/components";
 
 :root {
   /*! Screen Sizes */
@@ -59,6 +60,9 @@
   --link: var(--color-primary);
   --link-hover: var(--color-primary-light);
 
+  --theme-white: #FFFFFF;
+  --theme-black: #000000;
+
   --btn-shadow: inset 4px 6px 13px rgba(0, 0, 0, 0.05), 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -105,19 +109,11 @@
   --link: var(--color-primary);
   --link-hover: var(--color-primary-light);
 
+  --theme-white: #000000;
+  --theme-black: #FFFFFF;
+
   --btn-shadow: inset 4px 6px 13px rgba(255, 255, 255, 0.06),
     1px 2px 3px rgba(0, 0, 0, 0.4);
-}
-
-body {
-  background-color: var(--bg);
-}
-
-body {
-  font-family: var(--font-family-primary);
-  font-size: vars.$font-size-base;
-  line-height: 1.8;
-  color: var(--text);
 }
 
 .btn {
@@ -151,22 +147,6 @@ body {
 .btn-solid {
   background-color: var(--color-primary);
   color: var(--text-light);
-}
-
-main>section {
-  padding-left: vars.$spacer;
-  padding-right: vars.$spacer;
-  padding-top: vars.$spacer-xl;
-  padding-bottom: vars.$spacer-xxl;
-  background-color: var(--bg-light);
-}
-
-section.is-light-colored {
-  background-color: var(--bg);
-}
-
-section.is-primary-colored {
-  background-color: var(--color-primary-light-bg);
 }
 
 .container {
@@ -253,4 +233,15 @@ section.is-primary-colored {
   height: 2px;
   background-color: var(--color-dark-xlightest);
   background-color: var(--bg-light);
+}
+
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

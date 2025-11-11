@@ -1,4 +1,9 @@
-@use "@/styles/base/variables" as vars;
+/*** _reset.scss \
+  Purpose: Completely removes all browser default styles — margins, paddings, heading sizes, etc. 
+  Why: To start from a “blank canvas.”
+**********************************/
+
+@use "@/styles/utils/variables" as vars;
 
 /* Box sizing rules */
 *,
@@ -30,6 +35,7 @@ dl,
 dd {
   margin: 0;
 }
+
 /* Set core body defaults */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
@@ -60,7 +66,7 @@ img {
 }
 
 /* Natural flow and rhythm in articles by default */
-article > * + * {
+article>*+* {
   margin-top: 1em;
 }
 
@@ -72,12 +78,22 @@ select {
   font: inherit;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 2.5rem;
 }

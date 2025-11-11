@@ -13,11 +13,10 @@ type NavLink = {
 };
 
 type HeaderProps = {
-  logo: string;
   navLinks: NavLink[];
 };
 
-const Header = ({ logo, navLinks }: HeaderProps) => {
+const Header = ({ navLinks }: HeaderProps) => {
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,7 +55,7 @@ const Header = ({ logo, navLinks }: HeaderProps) => {
     <>
       <header className={styles.Wrapper}>
         <Reveal delay={0.3}>
-          <Link to="/" className={styles.logo}>{logo}</Link>
+          <Link to="/" className={styles.logo}><span className={styles.muted}>hey@</span>jewelmichael<span className={styles.muted}>.com</span></Link>
         </Reveal>
 
         {/* Desktop nav */}

@@ -10,7 +10,6 @@ const App = () => {
   return (
     <>
       <Header
-        logo="jewelmichael"
         navLinks={[
           { label: 'Home', path: '/' },
           { label: 'About', path: '/about' },

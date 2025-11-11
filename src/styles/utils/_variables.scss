@@ -1,3 +1,8 @@
+/*** _variables.scss 
+  Stores all the reusable values — colors, fonts, spacings, z-index layers, breakpoints, etc. 
+  Why: Makes theme management easy (you change a color or spacing in one place).
+**********************************/
+
 /* Imports
  ------*/
 @use "@/assets/fonts/FontImport.scss";
@@ -12,8 +17,8 @@ $color-secondary-light: var(--color-secondary-light); //#4B5563;
 $color-accent: var(--color-accent);
 
 // Light theme
-$color-black: #000000;
-$color-white: #ffffff;
+$color-black: var(--theme-black); // #121212;
+$color-white: var(--theme-white); // #FFFFFF;
 $light-bg: var(--bg); // #F8F9FA;
 $light-bg-light: var(--bg-light); // #F8F9FA;
 $light-bg-dark: var(--bg-light); // #F8F9FA;
@@ -43,8 +48,9 @@ $spacer-xxs: $spacer * 0.1;
 
 /* Component Variables 
 ------*/
-$headerHeight: 80px;
-$containerWidth: 1280px;
+$headerHeight: 100px;
+$headerHeightDekstop: 80px;
+$containerWidth: 1420px;
 
 /* Fonts , Sizes and Styles
 ------*/
@@ -111,3 +117,27 @@ $breakpoint-sm: 576px; // Small devices (landscape phones)
 $breakpoint-md: 768px; // Medium devices (tablets)
 $breakpoint-lg: 992px; // Large devices (desktops)
 $breakpoint-xl: 1200px; // Extra large devices (large desktops)
+
+
+// ===========================
+// 🎯 Z-Index Layering System
+// ===========================
+
+// Base content (sections, text, images)
+$z-base: 0;
+
+// Header / Nav / Fixed UI
+$z-header: 100;
+
+// Floating buttons (like "Back to Top", social links)
+$z-floating: 200;
+
+// Dropdowns, popups, or small overlays
+$z-overlay: 500;
+
+// Modal windows, menus, or fullscreen lightboxes
+$z-modal: 800;
+
+// Tooltips, loaders, alerts
+$z-tooltip: 1000;
+$z-loader: 1100;

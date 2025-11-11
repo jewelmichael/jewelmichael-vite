@@ -1,33 +1,36 @@
 .wrapper {
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 3rem;
+  height: 2.4rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   background: transparent;
   border-color: transparent;
+  border-width: 0;
 }
 
 .bar {
   position: absolute;
-  width: 24px;
-  height: 2px;
-  background-color: var(--text);
-  border-radius: 1px;
+  width: 30px;
+  height: 3px;
+  background-color: vars.$color-primary;
+  border-radius: 3px;
   transition: all 0.3s ease;
 }
 
-.bar1 {
-  top: 0;
-}
+// .bar1 {
+//   top: 5px;
+// }
+
+// .bar2 {
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
 
 .bar2 {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.bar3 {
-  bottom: 0;
+  bottom: 5px;
+  width: 18px;
+  right: 0;
 }

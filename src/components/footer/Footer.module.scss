@@ -1,22 +1,22 @@
-.Wrapper {
-  padding: vars.$spacer-l vars.$spacer-m;
-  text-align: center;
-  border-top: 2px solid var(--color-black-xlightest);
-  font-size: 1.7rem;
+// .Wrapper {
+//   padding: vars.$spacer-l vars.$spacer-m;
+//   text-align: center;
+//   border-top: 2px solid var(--color-black-xlightest);
+//   font-size: 1.7rem;
 
-  border-top-color: var(--border);
-  background-color: var(--bg-dark);
+//   border-top-color: var(--border);
+//   background-color: var(--bg-dark);
 
-  .withButton {
-    width: 600px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 100%;
-  }
+//   .withButton {
+//     width: 600px;
+//     margin: 0 auto;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     max-width: 100%;
+//   }
 
-  @include mixins.breakpoint(xs) {
-    font-size: vars.$font-size-display;
-  }
-}
+//   @include mixins.breakpoint(xs) {
+//     font-size: vars.$font-size-display;
+//   }
+// }
