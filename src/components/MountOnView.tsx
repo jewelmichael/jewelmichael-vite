@@ -15,7 +15,7 @@ type Props = PropsWithChildren<{
   placeholder?: React.ReactNode;
 
   /** Animation controls */
-  offsetX?: number;      // slide from left (-ve)
+  offsetY?: number;      // slide from left (-ve)
   duration?: number;
   delay?: number;
   className?: string;
@@ -25,10 +25,10 @@ export default function MountOnView({
   children,
   once = true,
   amount = 0.2,
-  rootMargin = "0px 0px -10% 0px",
+  rootMargin = "0px -10px 0px 0px",
   mountWhenVisible = false,
   placeholder = null,
-  offsetX = -24,
+  offsetY = 10,
   duration = 0.6,
   delay = 0,
   className,
@@ -57,8 +57,8 @@ export default function MountOnView({
     <motion.div
       ref={ref}
       className={className}
-      initial={{ opacity: 0, x: offsetX }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: offsetY }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, amount }}
       transition={{ duration, delay, ease: "easeOut" }}
       // Force start at 0 even if some CSS sets opacity:1
