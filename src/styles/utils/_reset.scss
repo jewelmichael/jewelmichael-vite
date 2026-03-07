@@ -1,9 +1,7 @@
-/*** _reset.scss \
+/*** _reset.scss 
   Purpose: Completely removes all browser default styles — margins, paddings, heading sizes, etc. 
   Why: To start from a “blank canvas.”
 **********************************/
-
-@use "@/styles/utils/variables" as vars;
 
 /* Box sizing rules */
 *,

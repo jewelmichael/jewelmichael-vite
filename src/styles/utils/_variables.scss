@@ -82,7 +82,7 @@ $cardBorderRadius: 4px;
 
 // _variables.scss
 
-$variable-sizes: (
+$spacer-sizes: (
   none: 0,
   xs: 4px,
   s: 8px,
@@ -141,3 +141,10 @@ $z-modal: 800;
 // Tooltips, loaders, alerts
 $z-tooltip: 1000;
 $z-loader: 1100;
+
+/* Grid System
+*/
+$grid-columns: 12;
+
+// ===========================
+// End of _variables.scss

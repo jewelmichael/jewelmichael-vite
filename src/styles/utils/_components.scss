@@ -2,3 +2,37 @@
   Purpose: Styles for individual UI components (buttons, cards, modals). 
   Why: Keeps each module clean and reusable.
 **********************************/
+@use "@/styles/utils/variables" as vars;
+
+.btn {
+  background-color: var(--bg-light);
+  color: var(--text);
+  border: 0;
+  border-radius: 100px;
+  padding: vars.$spacer vars.$spacer-m 1.8rem;
+  line-height: 1;
+  font-weight: 500;
+  box-shadow: var(--btn-shadow);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.005);
+  box-shadow: vars.$btnShadowHover;
+}
+
+.btn+.btn {
+  margin-left: 1.2rem;
+}
+
+.btn-clear {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.btn-solid {
+  background-color: var(--color-primary);
+  color: var(--text-light);
+}

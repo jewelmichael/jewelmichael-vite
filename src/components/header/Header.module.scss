@@ -4,7 +4,7 @@
 
 .linkItem {
   text-transform: lowercase;
-  margin: 0 vars.$spacer;
+  margin: 0 $spacer;
 }
 
 .Wrapper {
@@ -17,13 +17,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: vars.$z-header;
-  padding-left: vars.$spacer;
-  padding-right: vars.$spacer;
-  min-height: vars.$headerHeight;
+  z-index: $z-header;
+  padding-left: $spacer;
+  padding-right: $spacer;
+  min-height: $headerHeight;
 
   .muted {
-    color: vars.$color-black;
+    color: $color-black;
     opacity: 0.1;
   }
 

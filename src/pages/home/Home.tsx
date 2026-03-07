@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <main>
       {/* Hero Section */}
-      <section className={`is-light-colored ${style.withVectorPhoto}`}>
+      <section className={`${style.withVectorPhoto}`}>
         <div className={style.MainJumbotron}>
           <div className={style.flex1}>
             <div className={style.content}>
@@ -78,7 +78,7 @@ const Home = () => {
               </div>
             </article>
 
-            <article className={`about display-flex align-items-stretch justify-content-center ${style.highlights}`}>
+            <article className={`row ${style.highlights}`}>
               {[{
                 title: 'years of experience',
                 value: `${experienceCount}+`,
@@ -89,8 +89,8 @@ const Home = () => {
                 title: 'happy clients',
                 value: '30+',
               }].map((item, idx) => (
-                <Reveal delay={(0.2 * idx) - 0.2 } className={style.highlight_item} key={idx}>
-                  <span className="font-display font-bold">{item.value}</span>
+                <Reveal delay={(0.2 * idx) - 0.2} className={style.highlight_item} key={idx}>
+                  <span className="font-display fw-bold">{item.value}</span>
                   <h3>{item.title}</h3>
                 </Reveal>
               ))}
@@ -100,7 +100,7 @@ const Home = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className={`is-primary-colored ${style.experience}`}>
+      <section id="experience" className={`is-primary-colored`}>
         <MountOnView>
           <div className="container">
             <Reveal>
@@ -109,15 +109,15 @@ const Home = () => {
                 <h2>Everything about me!</h2>
               </hgroup>
             </Reveal>
-            <div className={`flexCards cards column2 ${style.cards}`}>
+            <div className={`row`}>
               {[
                 { role: 'Analyst', company: 'Factweavers', years: '2021 - present' },
                 { role: 'UI Developer', company: 'Global infonet', years: '2019 - 2021' },
                 { role: 'UI Developer', company: '2Hatslogic', years: '2018 - 2019' },
                 { role: 'UI Developer', company: 'Veristics', years: '2016 - 2018' },
               ].map((job, idx) => (
-                <Reveal className="flexItem" key={idx} delay={0.2 * idx}>
-                  <div className={`carditem ${style.carditem}`}>
+                <Reveal className="col-4" key={idx} delay={0.2 * idx}>
+                  <div className={`carditem`}>
                     <header className="display-flex justify-content-between mb-s lh-1">
                       <div className="subtitle flex0">{job.role}</div>
                       <div className="subtitle text-secondary">{job.years}</div>
@@ -143,10 +143,10 @@ const Home = () => {
                 <h2>My Services</h2>
               </hgroup>
             </Reveal>
-            <div className="flexCards cards card-outline column3 noShrink">
+            <div className="row">
               {[1, 2, 3, 4, 5].map((n) => (
-                <Reveal delay={0.2 * n} className="flexItem" key={n}>
-                  <div className="carditem">
+                <Reveal delay={0.2 * n} className="col4" key={n}>
+                  <div className="">
                     <header>
                       <div className="lh-1 mb-s text-black-lightest">{`0${n}`}</div>
                       <div className="fw-semibold mb-base">Web Design</div>

@@ -2,13 +2,120 @@
   Purpose: Define base-level styles for elements (body, headings, links, paragraphs). 
   Why: Gives typography, colors, and global visual rules.
 **********************************/
+@use "sass:math";
+@use "variables" as vars;
 
-@use "@/styles/utils/variables" as vars;
-@use "@/styles/utils/mixins" as mixins;
+:root {
+  /*! Screen Sizes */
+  --breakpoint-xs: #{vars.$breakpoint-xs};
+  --breakpoint-sm: #{vars.$breakpoint-sm};
+  --breakpoint-md: #{vars.$breakpoint-md};
+  --breakpoint-lg: #{vars.$breakpoint-lg};
+  --breakpoint-xl: #{vars.$breakpoint-xl};
 
-@include mixins.generate-spacer-classes();
-@include mixins.generate-line-height-classes();
-@include mixins.generate-font-weight-classes();
+  /*! Font */
+  --font-family-primary: #{vars.$primaryFontFamily};
+  --font-family-secondary: #{vars.$secondaryFontFamily};
+
+  /*! Colors – Light Theme */
+  --color-primary: #139652;
+  --color-primary-light: #1FBF73;
+  --color-primary-lighter: #A2EFC8;
+  --color-primary-light-bg: #C6F2DE;
+  --color-primary-dark: #0B3F2B;
+  --color-primary-darker: #052014;
+  --color-primary-dark-bg: #0B3F2B;
+  --color-primary-darkest-bg: #041812;
+
+  --color-secondary: #F2C94C;
+  --color-secondary-light: #FFF4C2;
+  --color-secondary-lighter: #FFF9E4;
+  --color-secondary-dark: #C1A437;
+  --color-secondary-darker: #8F7D27;
+
+  --color-accent: #EB5757;
+  --color-accent-light: #F68C8C;
+  --color-accent-dark: #BB2C2C;
+
+  --bg: #F8F9FA;
+  --bg-light: #FFFFFF;
+  --bg-lighter: #FFFFFF;
+  --bg-dark: #E6EBE9;
+  --bg-darker: #D1D6D4;
+
+  --text: #1E1E1E;
+  --fixed-text: #1E1E1E;
+  --text-muted: #5E5E5E;
+  --text-light: #F5F5F5;
+
+  --card: #FFFFFF;
+  --card-light: #F5F7F6;
+  --card-dark: #E6EBE9;
+
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --muted: #A6A6A6;
+  --border: #DADADA;
+  --highlight-hover: rgba(0, 0, 0, 0.05);
+
+  --link: var(--color-primary);
+  --link-hover: var(--color-primary-light);
+
+  --theme-white: #FFFFFF;
+  --theme-black: #000000;
+
+  --btn-shadow: inset 4px 6px 13px rgba(0, 0, 0, 0.05), 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] {
+  /*! Colors – Dark Theme */
+  --color-primary: #139652;
+  --color-primary-light: #1FBF73;
+  --color-primary-lighter: #48D9A3;
+  --color-primary-light-bg: #1C4B3A;
+  --color-primary-dark: #0B3F2B;
+  --color-primary-darker: #062D1F;
+  --color-primary-dark-bg: #0A2B21;
+  --color-primary-darkest-bg: #031710;
+
+  --color-secondary: #F2C94C;
+  --color-secondary-light: #FFEA9B;
+  --color-secondary-lighter: #FFF7D6;
+  --color-secondary-dark: #D9B63C;
+  --color-secondary-darker: #9C8628;
+
+  --color-accent: #FF6B6B;
+  --color-accent-light: #FF9999;
+  --color-accent-dark: #B03030;
+
+  --bg: #121212;
+  --bg-light: #1E1E1E;
+  --bg-lighter: #2A2A2A;
+  --bg-dark: #0A0A0A;
+  --bg-darker: #050505;
+
+  --text: #F5F5F5;
+  --text-muted: #B5B5B5;
+  --text-light: #1E1E1E;
+
+  --card: #1E1E1E;
+  --card-light: #2C2C2E;
+  --card-dark: #292929;
+
+  --card-shadow: rgba(0, 0, 0, 0.6);
+  --muted: #7D7D7D;
+  --border: #3A3A3C;
+  --highlight-hover: rgba(255, 255, 255, 0.06);
+
+  --link: var(--color-primary);
+  --link-hover: var(--color-primary-light);
+
+  --theme-white: #000000;
+  --theme-black: #FFFFFF;
+
+  --btn-shadow: inset 4px 6px 13px rgba(255, 255, 255, 0.06),
+    1px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
 
 html {
   font-size: 62.5%;
@@ -16,7 +123,7 @@ html {
 
 body {
   background-color: var(--bg);
-  font-family: var(--font-family-primary);
+  font-family: vars.$primaryFontFamily;
   font-size: vars.$font-size-base;
   line-height: 1.8;
   color: var(--text);
@@ -58,7 +165,7 @@ main>section {
   padding-right: vars.$spacer;
   padding-top: vars.$spacer-xl;
   padding-bottom: vars.$spacer-xxl;
-  background-color: var(--bg-light);
+  background-color: var(--bg);
 }
 
 section.is-light-colored {
@@ -69,225 +176,20 @@ section.is-primary-colored {
   background-color: var(--color-primary-light-bg);
 }
 
-
-.font-base {
-  font-size: vars.$font-size-base;
+.container {
+  width: 100%;
+  max-width: vars.$containerWidth;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.font-display {
-  font-size: 4.8rem;
-}
-
-.font-h1 {
-  font-size: vars.$font-size-h1;
-}
-
-.font-h2 {
-  font-size: vars.$font-size-h2;
-}
-
-.font-h3 {
-  font-size: vars.$font-size-h3;
-}
-
-.font-h4 {
-  font-size: vars.$font-size-h4;
-}
-
-.font-h5 {
-  font-size: vars.$font-size-h5;
-}
-
-.font-h6 {
-  font-size: vars.$font-size-h6;
-}
-
-.fond-bold {
-  font-weight: 600;
-}
-
-.fond-boldest {
-  font-weight: 900;
-}
-
-.fond-bolder {
-  font-weight: 700;
-}
-
-.fond-light {
-  font-weight: 300;
-}
-
-.fond-thin {
-  font-weight: 100;
-}
-
-.display-inline-block {
-  display: inline-block;
-}
-
-/*
-* Flex box
-*/
-
-.display-flex {
+.row {
   display: flex;
-}
+  flex-wrap: wrap;
+  row-gap: vars.$spacer-m;
+  margin-inline: math.div(vars.$spacer-m, 2) * -1;
 
-.display-inline-flex {
-  display: inline-flex;
-}
-
-.align-items-stretch {
-  align-items: stretch;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-.align-items-start {
-  align-items: flex-start;
-}
-
-.align-items-end {
-  align-items: flex-end;
-}
-
-.align-content-center {
-  align-content: center;
-}
-
-.align-content-start {
-  align-content: flex-start;
-}
-
-.align-content-end {
-  align-content: flex-end;
-}
-
-.align-self-center {
-  align-self: center;
-}
-
-.align-self-start {
-  align-self: flex-start;
-}
-
-.align-self-end {
-  align-self: flex-end;
-}
-
-.justify-items-center {
-  justify-items: center;
-}
-
-.justify-items-start {
-  justify-items: flex-start;
-}
-
-.justify-items-end {
-  justify-items: flex-end;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.justify-content-start {
-  justify-content: flex-start;
-}
-
-.justify-content-end {
-  justify-content: flex-end;
-}
-
-.justify-content-between {
-  justify-content: space-between;
-}
-
-.flex0 {
-  flex: 0 0 auto;
-}
-
-.flex1 {
-  flex: 1 0 auto;
-}
-
-.flex2 {
-  flex: 2 0 auto;
-}
-
-.flex3 {
-  flex: 3 0 auto;
-}
-
-.display-content {
-  display: contents;
-}
-
-.flexCards {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-flow: row wrap;
-  margin: calc(-1 * vars.$cardSpace / 2);
-  flex-direction: column;
-
-  .flexItem {
-    flex: 1;
-    margin: calc(vars.$cardSpace / 2);
-  }
-
-  &.noShrink {
-    .flexItem {
-      flex: 0 0 auto;
-    }
-  }
-
-  &.column2 {
-    .flexItem {
-      flex-basis: 100%;
-
-      @include mixins.breakpoint(md) {
-        flex-basis: calc((100% / 2) - vars.$cardSpace);
-      }
-    }
-  }
-
-  &.column3 {
-    .flexItem {
-      flex-basis: 100%;
-
-      @include mixins.breakpoint(md) {
-        flex-basis: calc((100% / 2) - vars.$cardSpace);
-      }
-
-      @include mixins.breakpoint(lg) {
-        flex-basis: calc((100% / 3) - vars.$cardSpace);
-      }
-    }
-  }
-
-  &.column4 {
-    .flexItem {
-      flex-basis: 100%;
-
-      @include mixins.breakpoint(md) {
-        flex-basis: calc((100% / 2) - vars.$cardSpace);
-      }
-
-      @include mixins.breakpoint(lg) {
-        flex-basis: calc((100% / 3) - vars.$cardSpace);
-      }
-
-      @include mixins.breakpoint(xl) {
-        flex-basis: calc((100% / 4) - vars.$cardSpace);
-      }
-    }
-  }
-
-  @include mixins.breakpoint(md) {
-    flex-direction: row;
+  .col {
+    flex: 1 1 0;
   }
 }
